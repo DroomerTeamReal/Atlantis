@@ -48,10 +48,10 @@ const platformSelect = document.getElementById('platform-select');
 const downloadBtn = document.getElementById('download-btn');
 
 const downloadLinks = {
-    windows: 'https://example.com/atlantis-v6-windows.exe',
-    mac: 'https://example.com/atlantis-v6-mac.dmg',
-    android: 'https://example.com/atlantis-v6.apk',
-    ios: 'https://example.com/atlantis-v6-ios'
+    windows: 'https://www.mediafire.com/file/nsrm3wf2x4lc34p/Atlantis.zip/file',
+    mac: 'coming soon',
+    android: 'maybe',
+    ios: 'maybe'
 };
 
 platformSelect.addEventListener('change', (e) => {
