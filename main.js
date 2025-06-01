@@ -48,7 +48,7 @@ const platformSelect = document.getElementById('platform-select');
 const downloadBtn = document.getElementById('download-btn');
 
 const downloadLinks = {
-    windows: 'https://www.mediafire.com/file/nsrm3wf2x4lc34p/Atlantis.zip/file',
+    windows: 'https://atlantisv6.vercel.app/Atlantis%20Bootstrapper.exe',
     mac: 'coming soon',
     android: 'maybe',
     ios: 'maybe'
