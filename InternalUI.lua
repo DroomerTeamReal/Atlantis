@@ -1,4 +1,4 @@
---version 13
+--version 14
 
 -- Open the Developer Console first
 pcall(function()
@@ -294,6 +294,7 @@ Xbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
 Xbutton.TextSize = 40.000
 Xbutton.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 Xbutton.TextWrapped = true
+Xbutton.Visible = false
 
 UITextSizeConstraint_6.Parent = Xbutton
 UITextSizeConstraint_6.MaxTextSize = 35
