@@ -1,4 +1,4 @@
---version 17
+--version 18
 
 -- Open the Developer Console first
 pcall(function()
@@ -762,7 +762,7 @@ Execute.BorderColor3 = Color3.fromRGB(44, 44, 44)
 Execute.Position = UDim2.new(0.00500000967, 0, 0.910000026, 0)
 Execute.Size = UDim2.new(0.143999994, 0, 0.074000001, 0)
 Execute.Font = Enum.Font.Arial
-Execute.Text = "EXECUTE"
+Execute.Text = "Execute"
 Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
 Execute.TextScaled = true
 Execute.TextSize = 14.000
@@ -778,7 +778,7 @@ Clear.BorderColor3 = Color3.fromRGB(44, 44, 44)
 Clear.Position = UDim2.new(0.158899993, 0, 0.910000026, 0)
 Clear.Size = UDim2.new(0.143999994, 0, 0.074000001, 0)
 Clear.Font = Enum.Font.Arial
-Clear.Text = "CLEAR"
+Clear.Text = "Clear"
 Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
 Clear.TextScaled = true
 Clear.TextSize = 14.000
@@ -799,6 +799,7 @@ OpenFileButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 OpenFileButton.TextScaled = true
 OpenFileButton.TextSize = 14.000
 OpenFileButton.TextWrapped = true
+OpenFileButton.Visible = false
 
 UITextSizeConstraint_18.Parent = OpenFileButton
 UITextSizeConstraint_18.MaxTextSize = 14
@@ -815,6 +816,7 @@ SaveFileButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 SaveFileButton.TextScaled = true
 SaveFileButton.TextSize = 14.000
 SaveFileButton.TextWrapped = true
+SaveFileButton.Visible = false
 
 UITextSizeConstraint_19.Parent = SaveFileButton
 UITextSizeConstraint_19.MaxTextSize = 14
@@ -848,6 +850,7 @@ OptionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 OptionButton.TextScaled = true
 OptionButton.TextSize = 14.000
 OptionButton.TextWrapped = true
+OptionButton.Visible = false
 
 UITextSizeConstraint_21.Parent = OptionButton
 UITextSizeConstraint_21.MaxTextSize = 14
