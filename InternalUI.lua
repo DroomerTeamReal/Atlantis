@@ -1,4 +1,4 @@
---version 19
+--version 20
 
 -- Open the Developer Console first
 pcall(function()
@@ -170,8 +170,8 @@ KRNL.DisplayOrder = 999999999
 KrnlGUI.Name = "KrnlGUI"
 KrnlGUI.Parent = DevConsole
 KrnlGUI.Active = true
-KrnlGUI.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-KrnlGUI.BorderColor3 = Color3.fromRGB(30, 30, 30)
+KrnlGUI.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+KrnlGUI.BorderColor3 = Color3.fromRGB(34, 34, 34)
 KrnlGUI.Position = UDim2.new(0, 137, 0, 141)
 KrnlGUI.Size = UDim2.new(0, 685, 0, 344)
 KrnlGUI.Visible = false
