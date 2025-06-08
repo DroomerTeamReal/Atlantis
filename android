@@ -1,4 +1,4 @@
---Gay 1
+--Gay 2
 local KRNL = Instance.new("ScreenGui")
 local KrnlGUI = Instance.new("Frame")
 local FileButton = Instance.new("TextButton")
@@ -251,7 +251,7 @@ TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0.465686679, 0, 0.136606336, 0)
 TextLabel.Size = UDim2.new(0.0694269463, 0, 0.726004899, 0)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "KRNL"
+TextLabel.Text = "Atlantis"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 20.000
@@ -1291,7 +1291,7 @@ FloatingGUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 FloatingGUI.BackgroundTransparency = 1.000
 FloatingGUI.Position = UDim2.new(0, 599, 0, 62)
 FloatingGUI.Size = UDim2.new(0, 39, 0, 39)
-FloatingGUI.Image = "rbxassetid://11671355800"
+FloatingGUI.Image = "rbxassetid://135731490814137"
 
 -- Scripts:
 
