@@ -1,4 +1,4 @@
---version 12
+--version 13
 
 -- Open the Developer Console first
 pcall(function()
@@ -482,7 +482,7 @@ Source.ClearTextOnFocus = false
 Source.Font = Enum.Font.Code
 Source.MultiLine = true
 Source.PlaceholderColor3 = Color3.fromRGB(204, 204, 204)
-Source.Text = "--Welcome To KRNL Mobile!"
+Source.Text = "--Atlantis"
 Source.TextColor3 = Color3.fromRGB(204, 204, 204)
 Source.TextSize = 14.000
 Source.TextXAlignment = Enum.TextXAlignment.Left
@@ -644,7 +644,7 @@ Source_2.ClearTextOnFocus = false
 Source_2.Font = Enum.Font.Code
 Source_2.MultiLine = true
 Source_2.PlaceholderColor3 = Color3.fromRGB(204, 204, 204)
-Source_2.Text = "-- Welcome To KRNL Remake.\n-- KRNL Remake made by .chill.z."
+Source_2.Text = "--Atlantis"
 Source_2.TextColor3 = Color3.fromRGB(204, 204, 204)
 Source_2.TextSize = 14.000
 Source_2.TextXAlignment = Enum.TextXAlignment.Left
