@@ -1,4 +1,4 @@
---version 10
+--version 11
 
 -- Open the Developer Console first
 pcall(function()
@@ -1307,7 +1307,7 @@ UIAspectRatioConstraint_2.Parent = KRNL
 UIAspectRatioConstraint_2.AspectRatio = 1.691
 
 FloatingGUI.Name = "FloatingGUI"
-FloatingGUI.Parent = KRNL
+FloatingGUI.Parent = DevConsole
 FloatingGUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 FloatingGUI.BackgroundTransparency = 1.000
 FloatingGUI.Position = UDim2.new(0, 599, 0, 62)
