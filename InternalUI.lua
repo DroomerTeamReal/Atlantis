@@ -1,4 +1,4 @@
---version 18
+--version 19
 
 -- Open the Developer Console first
 pcall(function()
@@ -170,8 +170,8 @@ KRNL.DisplayOrder = 999999999
 KrnlGUI.Name = "KrnlGUI"
 KrnlGUI.Parent = DevConsole
 KrnlGUI.Active = true
-KrnlGUI.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-KrnlGUI.BorderColor3 = Color3.fromRGB(34, 34, 34)
+KrnlGUI.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+KrnlGUI.BorderColor3 = Color3.fromRGB(30, 30, 30)
 KrnlGUI.Position = UDim2.new(0, 137, 0, 141)
 KrnlGUI.Size = UDim2.new(0, 685, 0, 344)
 KrnlGUI.Visible = false
@@ -189,6 +189,7 @@ FileButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 FileButton.TextScaled = true
 FileButton.TextSize = 16.000
 FileButton.TextWrapped = true
+FileButton.Visible = false
 
 UITextSizeConstraint.Parent = FileButton
 UITextSizeConstraint.MaxTextSize = 16
@@ -205,6 +206,7 @@ CreditsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CreditsButton.TextScaled = true
 CreditsButton.TextSize = 16.000
 CreditsButton.TextWrapped = true
+CreditsButton.Visible = false
 
 UITextSizeConstraint_2.Parent = CreditsButton
 UITextSizeConstraint_2.MaxTextSize = 16
@@ -221,6 +223,7 @@ GamesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 GamesButton.TextScaled = true
 GamesButton.TextSize = 15.000
 GamesButton.TextWrapped = true
+GamesButton.Visible = false
 
 UITextSizeConstraint_3.Parent = GamesButton
 UITextSizeConstraint_3.MaxTextSize = 15
@@ -237,6 +240,7 @@ HotScriptsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 HotScriptsButton.TextScaled = true
 HotScriptsButton.TextSize = 15.000
 HotScriptsButton.TextWrapped = true
+HotScriptsButton.Visible = false
 
 UITextSizeConstraint_4.Parent = HotScriptsButton
 UITextSizeConstraint_4.MaxTextSize = 15
@@ -253,6 +257,7 @@ OthersButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 OthersButton.TextScaled = true
 OthersButton.TextSize = 15.000
 OthersButton.TextWrapped = true
+OthersButton.Visible = false
 
 UITextSizeConstraint_5.Parent = OthersButton
 UITextSizeConstraint_5.MaxTextSize = 15
