@@ -136,12 +136,12 @@ local FloatingGUI = Instance.new("ImageButton")
 
 --Properties:
 
-KRNL.Name = "Atlantis"
-KRNL.Parent = (gethui and gethui()) or game:GetService("CoreGui")
+KRNL.Name = "KRNL"
+KRNL.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 KRNL.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 KRNL.ResetOnSpawn = false
 
-KrnlGUI.Name = "Atlantis"
+KrnlGUI.Name = "KrnlGUI"
 KrnlGUI.Parent = KRNL
 KrnlGUI.Active = true
 KrnlGUI.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
@@ -241,7 +241,7 @@ ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.Position = UDim2.new(0.00300000003, 0, 0.123999998, 0)
 ImageLabel.Size = UDim2.new(0.0361689702, 0, 0.726585209, 0)
-ImageLabel.Image = "rbxassetid//135731490814137"
+ImageLabel.Image = "rbxassetid://11671355800"
 
 TextLabel.Parent = SideGUI
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -249,7 +249,7 @@ TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0.465686679, 0, 0.136606336, 0)
 TextLabel.Size = UDim2.new(0.0694269463, 0, 0.726004899, 0)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Atlantis"
+TextLabel.Text = "KRNL"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 20.000
@@ -455,7 +455,7 @@ Source.ClearTextOnFocus = false
 Source.Font = Enum.Font.Code
 Source.MultiLine = true
 Source.PlaceholderColor3 = Color3.fromRGB(204, 204, 204)
-Source.Text = "--Atlantis Android"
+Source.Text = "--Welcome To KRNL Mobile!"
 Source.TextColor3 = Color3.fromRGB(204, 204, 204)
 Source.TextSize = 14.000
 Source.TextXAlignment = Enum.TextXAlignment.Left
