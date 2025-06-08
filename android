@@ -137,9 +137,10 @@ local FloatingGUI = Instance.new("ImageButton")
 --Properties:
 
 KRNL.Name = "KRNL"
-KRNL.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-KRNL.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+KRNL.Parent = game:GetService("CoreGui")
+KRNL.ZIndexBehavior = Enum.ZIndexBehavior.Global
 KRNL.ResetOnSpawn = false
+KRNL.DisplayOrder = 999999999
 
 KrnlGUI.Name = "KrnlGUI"
 KrnlGUI.Parent = KRNL
@@ -241,7 +242,7 @@ ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.Position = UDim2.new(0.00300000003, 0, 0.123999998, 0)
 ImageLabel.Size = UDim2.new(0.0361689702, 0, 0.726585209, 0)
-ImageLabel.Image = "rbxassetid://11671355800"
+ImageLabel.Image = "rbxassetid://122704234487580"
 
 TextLabel.Parent = SideGUI
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
