@@ -1,4 +1,4 @@
---version 7
+--version 8
 
 -- Open the Developer Console first
 pcall(function()
@@ -171,6 +171,7 @@ KrnlGUI.BorderColor3 = Color3.fromRGB(34, 34, 34)
 KrnlGUI.Position = UDim2.new(0, 137, 0, 141)
 KrnlGUI.Size = UDim2.new(0, 685, 0, 344)
 KrnlGUI.Visible = false
+KrnlGUI.Zindex = 999999
 
 FileButton.Name = "File Button"
 FileButton.Parent = KrnlGUI
