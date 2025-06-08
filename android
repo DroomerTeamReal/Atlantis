@@ -1,3 +1,4 @@
+--Gay 1
 local KRNL = Instance.new("ScreenGui")
 local KrnlGUI = Instance.new("Frame")
 local FileButton = Instance.new("TextButton")
@@ -242,7 +243,7 @@ ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.Position = UDim2.new(0.00300000003, 0, 0.123999998, 0)
 ImageLabel.Size = UDim2.new(0.0361689702, 0, 0.726585209, 0)
-ImageLabel.Image = "rbxassetid://122704234487580"
+ImageLabel.Image = "rbxassetid://135731490814137"
 
 TextLabel.Parent = SideGUI
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
