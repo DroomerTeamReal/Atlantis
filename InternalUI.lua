@@ -1,4 +1,4 @@
---version 16
+--version 17
 
 -- Open the Developer Console first
 pcall(function()
@@ -302,9 +302,9 @@ UITextSizeConstraint_6.MaxTextSize = 35
 button.Name = "- button"
 button.Parent = SideGUI
 button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Xbutton.BackgroundTransparency = 1.000
-Xbutton.Position = UDim2.new(0.957000017, 0, 0.159999996, 0)
-Xbutton.Size = UDim2.new(0.0409558825, 0, 0.690584838, 0)
+button.BackgroundTransparency = 1.000
+button.Position = UDim2.new(0.957000017, 0, 0.159999996, 0)
+button.Size = UDim2.new(0.0409558825, 0, 0.690584838, 0)
 button.Font = Enum.Font.SourceSans
 button.Text = "X"
 button.TextColor3 = Color3.fromRGB(255, 255, 255)
