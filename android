@@ -1,4 +1,4 @@
---Gay 2
+--Gay 3
 local KRNL = Instance.new("ScreenGui")
 local KrnlGUI = Instance.new("Frame")
 local FileButton = Instance.new("TextButton")
@@ -1291,7 +1291,7 @@ FloatingGUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 FloatingGUI.BackgroundTransparency = 1.000
 FloatingGUI.Position = UDim2.new(0, 599, 0, 62)
 FloatingGUI.Size = UDim2.new(0, 39, 0, 39)
-FloatingGUI.Image = "rbxassetid://135731490814137"
+FloatingGUI.Image = "rbxassetid://103739149538566"
 
 -- Scripts:
 
