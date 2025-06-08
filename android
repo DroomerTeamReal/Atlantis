@@ -1,8 +1,12 @@
---version 11
+--version 12
 
 -- Open the Developer Console first
 pcall(function()
     game:GetService("StarterGui"):SetCore("DevConsoleVisible", true)
+end)
+
+pcall(function()
+    game:GetService("StarterGui"):SetCore("DevConsoleVisible", false)
 end)
 
 -- Wait for DevConsoleMaster to appear in CoreGui
@@ -826,6 +830,7 @@ InjectButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 InjectButton.TextScaled = true
 InjectButton.TextSize = 14.000
 InjectButton.TextWrapped = true
+InjectButton.Visible = false
 
 UITextSizeConstraint_20.Parent = InjectButton
 UITextSizeConstraint_20.MaxTextSize = 14
