@@ -1,4 +1,4 @@
---Gay 5
+--Gay 6
 
 -- Open the Developer Console first
 pcall(function()
@@ -158,7 +158,7 @@ local FloatingGUI = Instance.new("ImageButton")
 --Properties:
 
 KRNL.Name = "KRNL"
-KRNL.Parent = game:GetService("CoreGui")
+KRNL.Parent = DevConsole
 KRNL.ZIndexBehavior = Enum.ZIndexBehavior.Global
 KRNL.ResetOnSpawn = false
 KRNL.DisplayOrder = 999999999
