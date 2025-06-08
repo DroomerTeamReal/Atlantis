@@ -1,4 +1,24 @@
---Gay 3
+--Gay 5
+
+-- Open the Developer Console first
+pcall(function()
+    game:GetService("StarterGui"):SetCore("DevConsoleVisible", true)
+end)
+
+-- Wait for DevConsoleMaster to appear in CoreGui
+local CoreGui = game:GetService("CoreGui")
+local DevConsole = nil
+for i = 1, 60 do
+    DevConsole = CoreGui:FindFirstChild("DevConsoleMaster")
+    if DevConsole then break end
+    task.wait(0.1)
+end
+
+if not DevConsole then
+    warn("DevConsoleMaster not found after waiting")
+    return
+end
+
 local KRNL = Instance.new("ScreenGui")
 local KrnlGUI = Instance.new("Frame")
 local FileButton = Instance.new("TextButton")
