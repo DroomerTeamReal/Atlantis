@@ -2,13 +2,28 @@
   "redirects": [
     {
       "source": "/Atlantis%20Bootstrapper.exe",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "^(?!Noob999gay).*$"
+        }
+      ],
       "destination": "https://bigrat.monster",
       "statusCode": 302
-    },
+    }
+  ],
+  "rewrites": [
     {
       "source": "/noooooskid%77%727727%99gyatgaynoobisbest",
-      "destination": "https://atlantisv6.vercel.app/Atlantis%20Bootstrapper.exe",
-      "statusCode": 302
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "^Noob999gay$"
+        }
+      ],
+      "destination": "/Atlantis%20Bootstrapper.exe"
     }
   ]
 }
