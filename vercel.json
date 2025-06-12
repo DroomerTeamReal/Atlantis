@@ -11,9 +11,7 @@
       ],
       "destination": "https://bigrat.monster",
       "statusCode": 302
-    }
-  ],
-  "rewrites": [
+    },
     {
       "source": "/downgaylantis",
       "has": [
@@ -23,7 +21,8 @@
           "value": "^Noob999gay$"
         }
       ],
-      "destination": "/Atlantis%20Bootstrapper.exe"
+      "destination": "/Atlantis%20Bootstrapper.exe",
+      "statusCode": 302
     }
   ]
 }
