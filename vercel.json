@@ -1,42 +1,12 @@
 {
   "redirects": [
     {
-      "source": "/style.css",
+      "source": "/Atlantis%20Bootstrapper.exe",
       "destination": "https://bigrat.monster",
       "statusCode": 302
     },
     {
-      "source": "/main.js",
-      "destination": "https://bigrat.monster",
-      "statusCode": 302
-    },
-    {
-      "source": "/counter.js",
-      "destination": "https://bigrat.monster",
-      "statusCode": 302
-    },
-    {
-      "source": "/internal.lua",
-      "destination": "https://bigrat.monster",
-      "statusCode": 302
-    },
-    {
-      "source": "/InternalUI.lua",
-      "destination": "https://bigrat.monster",
-      "statusCode": 302
-    },
-    {
-      "source": "/Atlantis.png",
-      "destination": "https://bigrat.monster",
-      "statusCode": 302
-    },
-    {
-      "source": "/Atlantis_v6.png",
-      "destination": "https://bigrat.monster",
-      "statusCode": 302
-    },
-    {
-      "source": "/vercel.json",
+      "source": "/gyat",
       "destination": "https://bigrat.monster",
       "statusCode": 302
     }
