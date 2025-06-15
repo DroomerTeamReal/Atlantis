@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Atlantis Casino</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      font-family: 'Segoe UI', sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .panel {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00ffff55;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #00ffff;
+      font-size: 32px;
+    }
+
+    #result {
+      font-size: 48px;
+      margin: 20px 0;
+      transition: 0.3s ease;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 30px;
+      margin: 15px;
+      background: linear-gradient(145deg, #00c3ff, #0090ff);
+      border: none;
+      color: white;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffff80;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(0.8);
+      background: linear-gradient(145deg, #00ffff, #00aaff);
+    }
+
+    .balance {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 18px;
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .rarity-glow {
+      animation: glow 0.7s ease-in-out;
+    }
+
+    @keyframes glow {
+      0%   { transform: scale(1); opacity: 1; }
+      50%  { transform: scale(1.3); opacity: 0.6; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="panel">
+    <h1>🎰 Casino</h1>
+    <div class="balance">💰 Money: $<span id="balance">1000</span></div>
+    <input id="bet" type="number" value="100" min="10" max="1000" />
+    <div id="result">?</div>
+    <button onclick="spin()">SPIN</button>
+  </div>
+
+  <!-- Spinning sound -->
+  <audio id="spinSound" src="spinning.mp3" preload="auto"></audio>
+
+  <script>
+    let balance = 1000;
+
+    const items = [
+      { name: "You got kicked out", color: "#ff0000", chance: 0.1, payout: -1000000000000000000000000000000 },
+      { name: "Lost", color: "#ff0000", chance: 15, payout: 0.1 },
+      { name: "Nothing", color: "#ffffff", chance: 30, payout: 1.0000000000001 },
+      { name: "Common", color: "#aaaaaa", chance: 60, payout: 1.3 },
+      { name: "Uncommon", color: "#4caf50", chance: 40, payout: 2 },
+      { name: "Rare", color: "#2196f3", chance: 27, payout: 3 },
+      { name: "Epic", color: "#9c27b0", chance: 8, payout: 8 },
+      { name: "Legendary", color: "#ffc107", chance: 1, payout: 20 },
+      { name: "Mythic", color: "#ff0000", chance: 0.1, payout: 500 }
+    ];
+
+    const resultDisplay = document.getElementById("result");
+    const spinSound = document.getElementById("spinSound");
+
+    function spin() {
+      const betInput = document.getElementById("bet");
+      let bet = parseInt(betInput.value);
+
+      if (isNaN(bet) || bet < 10) {
+        alert("Enter a valid bet (min $10).");
+        return;
+      }
+
+      if (bet > balance) {
+        alert("You don't have enough balance.");
+        return;
+      }
+
+      balance -= bet;
+      updateBalance();
+
+      
+      spinSound.currentTime = 0;
+      spinSound.play();
+
+      const roll = Math.random() * 100;
+      let total = 0;
+      let resultItem = null;
+
+      for (let item of items) {
+        total += item.chance;
+        if (roll <= total) {
+          resultItem = item;
+          break;
+        }
+      }
+
+      let spinIndex = 0;
+      const spinRounds = 20;
+      const interval = 50;
+
+      const spinning = setInterval(() => {
+        const fakeItem = items[spinIndex % items.length];
+        resultDisplay.textContent = fakeItem.name;
+        resultDisplay.style.color = fakeItem.color;
+        spinIndex++;
+
+        if (spinIndex >= spinRounds) {
+          clearInterval(spinning);
+
+          const winnings = Math.floor(bet * resultItem.payout);
+          balance += winnings;
+
+          setTimeout(() => {
+            resultDisplay.textContent = resultItem.name;
+            resultDisplay.style.color = resultItem.color;
+            resultDisplay.classList.add("rarity-glow");
+            setTimeout(() => resultDisplay.classList.remove("rarity-glow"), 700);
+
+            updateBalance();
+
+     
+            setTimeout(() => {
+              if (resultItem.payout > 1) {
+                alert(`You got a ${resultItem.name} and won $${winnings}!`);
+              } else {
+                alert(`You got a ${resultItem.name}. You lost some money.`);
+              }
+            }, 1000);
+
+          }, 50);
+        }
+      }, interval);
+    }
+
+    function updateBalance() {
+      document.getElementById("balance").textContent = balance;
+    }
+  </script>
+
+</body>
+</html>
