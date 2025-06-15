@@ -1,6 +1,5 @@
---version 20
+--version 769
 
--- Open the Developer Console first
 pcall(function()
     game:GetService("StarterGui"):SetCore("DevConsoleVisible", true)
 end)
@@ -9,7 +8,6 @@ pcall(function()
     game:GetService("StarterGui"):SetCore("DevConsoleVisible", false)
 end)
 
--- Wait for DevConsoleMaster to appear in CoreGui
 local CoreGui = game:GetService("CoreGui")
 local DevConsole = nil
 for i = 1, 60 do
