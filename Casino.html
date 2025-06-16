@@ -104,19 +104,33 @@
     let balance = 1000;
 
     const items = [
-      { name: "You got kicked out", color: "#ff0000", chance: 0.1, payout: -1000000000000000000000000000000 },
-      { name: "Lost", color: "#ff0000", chance: 6, payout: 0.1 },
-      { name: "Nothing", color: "#ffffff", chance: 2, payout: 1.0000000000001 },
-      { name: "Common", color: "#aaaaaa", chance: 9, payout: 1.3 },
-      { name: "Uncommon", color: "#4caf50", chance: 0, payout: 2 },
-      { name: "Rare", color: "#2196f3", chance: 4, payout: 3 },
-      { name: "Epic", color: "#9c27b0", chance: 1, payout: 8 },
-      { name: "Legendary", color: "#ffc107", chance: 1, payout: 20 },
-      { name: "Mythic", color: "#ff0000", chance: 0.5, payout: 500 },
-      { name: "Godly", color: "#4b1664", chance: 0.01, payout: 1000 },
-      { name: "Ultimate", color: "rainbow", chance: 99, payout: 50000 }
-    ];
+  { name: "You got kicked out", color: "#ff0000", chance: 0.1, payout: -1000000000000000000000000000000 },
+  { name: "Lost", color: "#ff0000", chance: 6, payout: 0.1 },
+  { name: "Nothing", color: "#ffffff", chance: 2, payout: 1.0000000000001 },
+  { name: "Common", color: "#aaaaaa", chance: 9, payout: 1.3 },
+  { name: "Uncommon", color: "#4caf50", chance: 0, payout: 2 },
+  { name: "Rare", color: "#2196f3", chance: 4, payout: 3 },
+  { name: "Epic", color: "#9c27b0", chance: 1, payout: 8 },
+  { name: "Legendary", color: "#ffc107", chance: 1, payout: 20 },
+  { name: "Mythic", color: "#ff0000", chance: 0.5, payout: 500 },
+  { name: "Godly", color: "#4b1664", chance: 0.01, payout: 1000 },
+  { name: "Ultimate", color: "#ffffff", chance: 99, payout: 50000, rainbow: true } // mark it
+];
 
+    const container = document.getElementById("itemsList");
+
+items.forEach(item => {
+  const el = document.createElement("div");
+  el.textContent = item.name;
+
+  if (item.rainbow) {
+    el.classList.add("rainbow");
+  } else {
+    el.style.color = item.color;
+  }
+
+  container.appendChild(el);
+});
     const resultDisplay = document.getElementById("result");
     const spinSound = document.getElementById("spinSound");
 
