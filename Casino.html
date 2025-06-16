@@ -104,46 +104,19 @@
     let balance = 1000;
 
     const items = [
-  { name: "You got kicked out", color: "#ff0000", chance: 0.1, payout: -1000000000000000000000000000000 },
-  { name: "Lost", color: "#ff0000", chance: 6, payout: 0.1 },
-  { name: "Nothing", color: "#ffffff", chance: 2, payout: 1.0000000000001 },
-  { name: "Common", color: "#aaaaaa", chance: 9, payout: 1.3 },
-  { name: "Uncommon", color: "#4caf50", chance: 0, payout: 2 },
-  { name: "Rare", color: "#2196f3", chance: 4, payout: 3 },
-  { name: "Epic", color: "#9c27b0", chance: 1, payout: 8 },
-  { name: "Legendary", color: "#ffc107", chance: 1, payout: 20 },
-  { name: "Mythic", color: "#ff0000", chance: 0.5, payout: 500 },
-  { name: "Godly", color: "#4b1664", chance: 0.01, payout: 1000 },
-  { name: "Ultimate", color: "#ff0000", chance: 99, payout: 50000 }
-];
+      { name: "You got kicked out", color: "#ff0000", chance: 0.1, payout: -1000000000000000000000000000000 },
+      { name: "Lost", color: "#ff0000", chance: 6, payout: 0.1 },
+      { name: "Nothing", color: "#ffffff", chance: 2, payout: 1.0000000000001 },
+      { name: "Common", color: "#aaaaaa", chance: 9, payout: 1.3 },
+      { name: "Uncommon", color: "#4caf50", chance: 0, payout: 2 },
+      { name: "Rare", color: "#2196f3", chance: 4, payout: 3 },
+      { name: "Epic", color: "#9c27b0", chance: 1, payout: 8 },
+      { name: "Legendary", color: "#ffc107", chance: 1, payout: 20 },
+      { name: "Mythic", color: "#ff0000", chance: 0.5, payout: 500 },
+      { name: "Godly", color: "#4b1664", chance: 0.01, payout: 1000 },
+      { name: "Ultimate", color: "#ff0000", chance: 99, payout: 50000 }
+    ];
 
-// Generate rainbow color from hue
-function hsvToRgb(h) {
-  let i = Math.floor(h * 6);
-  let f = h * 6 - i;
-  let q = 1 - f;
-  let t = f;
-  let r, g, b;
-
-  switch (i % 6) {
-    case 0: r = 1; g = t; b = 0; break;
-    case 1: r = q; g = 1; b = 0; break;
-    case 2: r = 0; g = 1; b = t; break;
-    case 3: r = 0; g = q; b = 1; break;
-    case 4: r = t; g = 0; b = 1; break;
-    case 5: r = 1; g = 0; b = q; break;
-  }
-
-  return `#${((1 << 24) + (Math.floor(r * 255) << 16) + (Math.floor(g * 255) << 8) + Math.floor(b * 255)).toString(16).slice(1)}`;
-}
-
-let hue = 0;
-setInterval(() => {
-  hue = (hue + 0.01) % 1; // cycle hue
-  const rainbowColor = hsvToRgb(hue);
-  const ultimate = items.find(i => i.name === "Ultimate");
-  if (ultimate) ultimate.color = rainbowColor;
-}, 50); // every 50ms (~20fps)
 
     const resultDisplay = document.getElementById("result");
     const spinSound = document.getElementById("spinSound");
