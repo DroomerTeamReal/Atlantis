@@ -1,4 +1,4 @@
---version2
+--version3
 local a a={cache={},load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
 end return a.cache[b].c end}do function a.a()local b,c,d='8.0',cloneref or
 function(b)return b end,{Theme={Syntax={Text=Color3.fromRGB(204,204,204),
@@ -62,7 +62,7 @@ Selectable=false,Size=UDim2.new(0,10,1,0),SizeConstraint=0,Visible=true,ZIndex=1
 'ImageButton',{Parent=u,Name='Left',Size=UDim2.new(0,10,0,10),
 BackgroundTransparency=0,BorderSizePixel=0,AutoButtonColor=false})r(10,4,'left')
 .Parent=v w=o('ImageButton',{Parent=u,Name='Right',Position=UDim2.new(1,-10,0,0)
-,Size=UDim2.new(0,10,0,10),BackgroundTransparency=1,BorderSizePixel=0,
+,Size=UDim2.new(0,10,0,10),BackgroundTransparency=0,BorderSizePixel=0,
 AutoButtonColor=false})r(10,4,'right').Parent=w else u.Size=UDim2.new(0,10,1,0)v
 =o('ImageButton',{Parent=u,Name='Up',Size=UDim2.new(0,10,0,10),
 BackgroundTransparency=1,BorderSizePixel=0,AutoButtonColor=false})r(10,4,'up').
