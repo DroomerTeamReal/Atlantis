@@ -67,6 +67,18 @@
     .rarity-glow {
       animation: glow 0.7s ease-in-out;
     }
+    .rainbow-text {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 3s linear infinite;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
 
     @keyframes glow {
       0%   { transform: scale(1); opacity: 1; }
@@ -102,7 +114,7 @@
       { name: "Legendary", color: "#ffc107", chance: 1, payout: 20 },
       { name: "Mythic", color: "#ff0000", chance: 0.5, payout: 500 },
       { name: "Godly", color: "#4b1664", chance: 0.01, payout: 1000 },
-      { name: "Ultimate", color: "#ff0000", chance: 99, payout: 50000 }
+      { name: "Ultimate", color: "rainbow", chance: 99, payout: 50000 }
     ];
 
     const resultDisplay = document.getElementById("result");
