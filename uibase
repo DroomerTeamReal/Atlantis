@@ -1,4 +1,4 @@
---version3
+--version4
 local a a={cache={},load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}
 end return a.cache[b].c end}do function a.a()local b,c,d='8.0',cloneref or
 function(b)return b end,{Theme={Syntax={Text=Color3.fromRGB(204,204,204),
@@ -89,7 +89,7 @@ BackgroundTransparency=1 end end)w.InputBegan:Connect(function(D)if D.
 UserInputType==Enum.UserInputType.MouseMovement and not A and t:CanScrollDown()
 then w.BackgroundTransparency=0.8 end if D.UserInputType~=Enum.UserInputType.
 MouseButton1 or not t:CanScrollDown()then return end A=true w.
-BackgroundTransparency=0.5 if t:CanScrollDown()then t:ScrollDown()t.Scrolled:
+BackgroundTransparency=0 if t:CanScrollDown()then t:ScrollDown()t.Scrolled:
 Fire()end local E,F=(tick())F=h.InputEnded:Connect(function(G)if G.UserInputType
 ~=Enum.UserInputType.MouseButton1 then return end F:Disconnect()if q(w)and t:
 CanScrollDown()then w.BackgroundTransparency=0.8 else w.BackgroundTransparency=1
