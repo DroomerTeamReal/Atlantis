@@ -3,39 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Atlantis Casino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <style>
     body {
-      background-color: #0f0f0f;
+      background-color: #1a1a1a;
       font-family: 'Segoe UI', sans-serif;
       color: #ffffff;
       text-align: center;
-      padding: 50px;
+      margin: 0;
+      padding: 0;
     }
 
     .panel {
       background-color: #1a1a1a;
-      padding: 30px;
+      padding: 30px 20px;
       border-radius: 20px;
-      box-shadow: 0 0 20px #00ffff55;
+      box-shadow: 0 0 0px #00ffff55;
       max-width: 500px;
-      margin: auto;
+      margin: 40px auto;
     }
 
     h1 {
       color: #00ffff;
-      font-size: 32px;
+      font-size: 28px;
+      margin-bottom: 20px;
     }
 
     #result {
-      font-size: 48px;
+      font-size: 36px;
       margin: 20px 0;
       transition: 0.3s ease;
+      min-height: 48px;
     }
 
     button {
-      font-size: 20px;
+      font-size: 18px;
       padding: 12px 30px;
-      margin: 15px;
+      margin: 15px 5px;
       background: linear-gradient(145deg, #00c3ff, #0090ff);
       border: none;
       color: white;
@@ -46,127 +54,173 @@
     }
 
     button:hover {
-      transform: scale(0.8);
+      transform: scale(0.95);
       background: linear-gradient(145deg, #00ffff, #00aaff);
     }
 
     .balance {
-      font-size: 24px;
+      font-size: 20px;
       margin-bottom: 10px;
     }
 
+    .icon {
+      margin-right: 8px;
+    }
+
     input[type="number"] {
-      padding: 8px 12px;
+      padding: 10px 14px;
       border-radius: 10px;
       border: none;
       font-size: 18px;
-      width: 100px;
+      width: 120px;
       margin-bottom: 20px;
+      background-color: #222;
+      color: white;
     }
 
     .rarity-glow {
       animation: glow 0.7s ease-in-out;
     }
-    .rainbow-text {
-  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-  background-size: 400% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rainbowMove 3s linear infinite;
-}
-
-@keyframes rainbowMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
 
     @keyframes glow {
       0%   { transform: scale(1); opacity: 1; }
       50%  { transform: scale(1.3); opacity: 0.6; }
       100% { transform: scale(1); opacity: 1; }
     }
+
+    @media (max-width: 600px) {
+      .panel {
+        width: 90%;
+        padding: 20px;
+        border-radius: 15px;
+      }
+
+      #result {
+        font-size: 28px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      input[type="number"] {
+        width: 100px;
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="panel">
-    <h1>🎰 Casino</h1>
-    <div class="balance">💰 Money: $<span id="balance">1000</span></div>
+  <div class="panel" id="casinoPanel">
+    <h1><i class="fas fa-dice icon"></i>Atlantis Casino</h1>
+    <div class="balance"><i class="fas fa-wallet icon"></i>Balance: $<span id="balance">1000</span></div>
     <input id="bet" type="number" value="100" min="10" max="1000" />
     <div id="result">?</div>
-    <button onclick="spin()">SPIN</button>
+    <button onclick="spin()"><i class="fas fa-play icon"></i>SPIN</button>
   </div>
 
   <!-- Spinning sound -->
   <audio id="spinSound" src="spinning.mp3" preload="auto"></audio>
 
   <script>
+    // Device Detection
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      document.body.style.fontSize = '16px';
+    }
+
     let balance = 1000;
 
     const items = [
-      { name: "You got kicked out", color: "#ff0000", chance: 0.1, payout: -1000000000000000000000000000000 },
-      { name: "Lost", color: "#ff0000", chance: 6, payout: 0.1 },
-      { name: "Nothing", color: "#ffffff", chance: 2, payout: 1.0000000000001 },
-      { name: "Common", color: "#aaaaaa", chance: 9, payout: 1.3 },
-      { name: "Uncommon", color: "#4caf50", chance: 0, payout: 2 },
-      { name: "Rare", color: "#2196f3", chance: 4, payout: 3 },
-      { name: "Epic", color: "#9c27b0", chance: 1, payout: 8 },
-      { name: "Legendary", color: "#ffc107", chance: 1, payout: 20 },
-      { name: "Mythic", color: "#ff0000", chance: 0.5, payout: 500 },
-      { name: "Godly", color: "#4b1664", chance: 0.01, payout: 1000 },
-      { name: "Ultimate", color: "#ff0000", chance: 99, payout: 50000 }
+      { name: "You got kicked out!", color: "#ff0000", chance: 0.01, payout: -999999999999 },
+      { name: "Lost", color: "#ff0000", chance: 19, payout: 0.1 },
+      { name: "Nothing", color: "#ffffff", chance: 5, payout: 1.0000000001 },
+      { name: "Common", color: "#aaaaaa", chance: 17, payout: 1.3 },
+      { name: "Uncommon", color: "#4caf50", chance: 28, payout: 1.9 },
+      { name: "Rare", color: "#2196f3", chance: 30, payout: 2 },
+      { name: "Epic", color: "#9c27b0", chance: 20, payout: 2.5 },
+      { name: "Legendary", color: "#ffc107", chance: 10, payout: 15 },
+      { name: "Mythic", color: "#ff00ff", chance: 5, payout: 50 },
+      { name: "Godly", color: "#4b1664", chance: 1, payout: 250 },
+      { name: "Ultimate", color: "#ff0000", chance: 0.1, payout: 5000 },
+      { name: "🐀Rat🐀", color: "#A52A2A", chance: 0.1, payout: 250000 },
     ];
-
 
     const resultDisplay = document.getElementById("result");
     const spinSound = document.getElementById("spinSound");
 
+    function hsvToRgb(h) {
+      let i = Math.floor(h * 6);
+      let f = h * 6 - i;
+      let q = 1 - f;
+      let t = f;
+      let r, g, b;
+      switch (i % 6) {
+        case 0: r = 1; g = t; b = 0; break;
+        case 1: r = q; g = 1; b = 0; break;
+        case 2: r = 0; g = 1; b = t; break;
+        case 3: r = 0; g = q; b = 1; break;
+        case 4: r = t; g = 0; b = 1; break;
+        case 5: r = 1; g = 0; b = q; break;
+      }
+      return `#${((1 << 24) + (Math.floor(r * 255) << 16) + (Math.floor(g * 255) << 8) + Math.floor(b * 255)).toString(16).slice(1)}`;
+    }
+
+    let hue = 0;
+    setInterval(() => {
+      hue = (hue + 0.01) % 1;
+      const color = hsvToRgb(hue);
+      const ultimate = items.find(i => i.name === "Ultimate");
+      if (ultimate) {
+        ultimate.color = color;
+        if (resultDisplay.textContent === ultimate.name) {
+          resultDisplay.style.color = color;
+        }
+      }
+    }, 50);
+
+    function pickRandomItem(items) {
+      const totalChance = items.reduce((sum, item) => sum + item.chance, 0);
+      const roll = Math.random() * totalChance;
+      let current = 0;
+      for (const item of items) {
+        current += item.chance;
+        if (roll < current) return item;
+      }
+      return items[items.length - 1];
+    }
+
     function spin() {
       const betInput = document.getElementById("bet");
       let bet = parseInt(betInput.value);
-
-      if (isNaN(bet) || bet < 10) {
-        alert("Enter a valid bet (min $10).");
-        return;
-      }
-
-      if (bet > balance) {
-        alert("You don't have enough balance.");
-        return;
-      }
+      if (isNaN(bet) || bet < 10) return alert("Enter a valid bet (min $10).");
+      if (bet > balance) return alert("Not enough balance.");
 
       balance -= bet;
       updateBalance();
-
-      
       spinSound.currentTime = 0;
       spinSound.play();
 
-      const roll = Math.random() * 100;
-      let total = 0;
-      let resultItem = null;
-
-      for (let item of items) {
-        total += item.chance;
-        if (roll <= total) {
-          resultItem = item;
-          break;
-        }
-      }
+      const resultItem = pickRandomItem(items);
 
       let spinIndex = 0;
-      const spinRounds = 20;
+      const spinRounds = 25;
       const interval = 50;
 
       const spinning = setInterval(() => {
-        const fakeItem = items[spinIndex % items.length];
+        const fakeItem = items[Math.floor(Math.random() * items.length)];
         resultDisplay.textContent = fakeItem.name;
         resultDisplay.style.color = fakeItem.color;
         spinIndex++;
 
         if (spinIndex >= spinRounds) {
           clearInterval(spinning);
-
           const winnings = Math.floor(bet * resultItem.payout);
           balance += winnings;
 
@@ -175,18 +229,14 @@
             resultDisplay.style.color = resultItem.color;
             resultDisplay.classList.add("rarity-glow");
             setTimeout(() => resultDisplay.classList.remove("rarity-glow"), 700);
-
             updateBalance();
-
-     
             setTimeout(() => {
               if (resultItem.payout > 1) {
-                alert(`You got a ${resultItem.name} and won $${winnings}!`);
+                alert(`😁 You Won $${winnings} from ${resultItem.name}!`);
               } else {
-                alert(`You got a ${resultItem.name}. You lost some money.`);
+                alert(`😢 You ${resultItem.name}. You lost some money.`);
               }
-            }, 1000);
-
+            }, 800);
           }, 50);
         }
       }, interval);
@@ -196,6 +246,5 @@
       document.getElementById("balance").textContent = balance;
     }
   </script>
-
 </body>
 </html>
