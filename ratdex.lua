@@ -1,3 +1,4 @@
+-- v1
 -- | SPDM | Global definitions
 
 local arceus = arceus or nil
@@ -599,7 +600,7 @@ do
 	-- SPDM
 	function utils:Notify(text: string)
 		cloneref(game:GetService("StarterGui")):SetCore("SendNotification", {
-			Title = "Codex " .. (isiosdevice() and "iOS" or "Android"),
+			Title = "Atlantis" .. (isiosdevice() and "iOS" or "Android"),
 			Text = text
 		});
 	end
@@ -883,7 +884,7 @@ do
 			openingMode = "Floating Icon", -- SPDM Team | Floating Icon
 			showParticles = true, -- SPDM Team | Show Particles Setting
 			autoExecute = true,
-			autoSaveTabs = false,
+			autoSaveTabs = true,
 			fps = {
 				unlocked = false,
 				vSync = false,
@@ -990,7 +991,7 @@ do
 		cache = {
 			{
 				title = "Script 1",
-				content = "print('Hello World!');",
+				content = "print('Atlantis V6');",
 				index = 1
 			}
 		},
@@ -1060,7 +1061,7 @@ do
 
 		local newTab = {
 			title = title,
-			content = content or "print('Hello World!');",
+			content = content or "print('Atlantis V6');",
 			index = index
 		};
 
@@ -4146,7 +4147,7 @@ do
 		ui.whitelist.Visible = isMainTab;
 		ui.changelog.Visible = isMainTab;
 		ui.specialUserInput.Visible = not isMainTab;
-		ui.note.Text = isMainTab and "Please complete the whitelist to gain access to Codex" or "Please enter your key to activate your Premium License";
+		ui.note.Text = isMainTab and "Please complete the whitelist to gain access to Atlantis" or "Please enter your key to activate your Premium License";
 	end
 
 	local function createUI(directory: Instance): ScreenGui
@@ -4158,7 +4159,8 @@ do
 			Parent = directory,
 			ResetOnSpawn = false,
 			ScreenInsets = Enum.ScreenInsets.None,
-			ZIndexBehavior = Enum.ZIndexBehavior.Global
+			ZIndexBehavior = Enum.ZIndexBehavior.Global,
+                        DisplayOrder = 999
 		}, {
 			background(),
 			instanceUtils:Create("ImageButton", { 
@@ -4321,20 +4323,20 @@ do
 		});
 
 		task.spawn(function()
-			local dataStep = startupStep.new("Fetching Codex Data...", "Data Fetched!", ui.whitelist.process):Start();
+			local dataStep = startupStep.new("Fetching Atlantis Data...", "Data Fetched!", ui.whitelist.process):Start();
 			internalSettings:Initialize();
 
 			changelog().Parent = ui;
 			local currentVersion = identifyexecutor and select(2, identifyexecutor()) or "Invalid Version";
 			if not (cloneref(game:GetService("RunService")):IsStudio() or internalUtils:AreVersionsAlike(currentVersion, isiosdevice() and internalSettings.data.iosVersion or internalSettings.data.androidVersion)) then
-				dataStep:Complete("Please update Codex.");
+				dataStep:Complete("Please update Atlantis.");
 				return;
 			end
 			dataStep:Complete();
 
 			local whitelistStep = startupStep.new("Waiting for you to Whitelist...", "Whitelisted!", ui.whitelist.process):Start();
 			local isStudio = cloneref(game:GetService("RunService")):IsStudio()
-			local checked = false
+			local checked = true
 			
 			repeat
 				if checked then
@@ -4476,7 +4478,7 @@ do
 					AnchorPoint = Vector2.new(0.5, 0.5),
 					BackgroundTransparency = 1, 
 					BorderSizePixel = 0, 
-					Image = "rbxassetid://11558559086", 
+					Image = "rbxassetid://82919203956733", 
 					Name = "codexIcon2", 
 					Position = UDim2.new(0.5, 0 ,0.5, 0), 
 					Size = UDim2.new(1,0,1,0),
@@ -4522,7 +4524,7 @@ do
 				instanceUtils:Create("ImageLabel", { 
 					BackgroundTransparency = 1, 
 					BorderSizePixel = 0, 
-					Image = "rbxassetid://11558559086", 
+					Image = "rbxassetid://82919203956733", 
 					Name = "codexIcon", 
 					Position = UDim2.new(0, 20, 0, 30), 
 					Size = UDim2.new(0, 36, 0, 36),
@@ -4534,7 +4536,7 @@ do
 					FontSize = Enum.FontSize.Size18, 
 					Name = "title", 
 					Position = UDim2.new(0, 78, 0, 38), 
-					Text = "Codex " .. (isiosdevice() and "iOS" or "Android"),
+					Text = "Atlantis " .. (isiosdevice() and "iOS" or "Android"),
 					TextColor3 = Color3.fromHex("ffffff"), 
 					TextSize = 16, 
 					TextTransparency = 1,
@@ -5304,7 +5306,7 @@ do
 				Name = "credit",
 				Position = UDim2.new(0.5, 0, 0, -28), 
 				Size = UDim2.new(0, 0, 0, 34), 
-				Text = "Powered by scriptblox.com", 
+				Text = "Powered by Atlantisv6.vercel.app/ScriptHub.html", 
 				TextColor3 = Color3.fromHex("b2b2b2"), 
 				TextSize = 14
 			}, {
@@ -6130,7 +6132,7 @@ do
 	framework.init = (function()
 		local sig = signal.new();
 		local directory = instanceUtils:DynamicParent(instanceUtils:Create("Folder", {
-			Name = "Codex"
+			Name = "Atlantis"
 		}));
 		local login;
 
