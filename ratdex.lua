@@ -1,6 +1,6 @@
 -- Auto-created folders in workspace
 
--- v1
+-- v2
 -- | Atlantis V6 | Global definitions
 
 local arceus = arceus or nil
@@ -6158,3 +6158,6 @@ end
 
 arceus_libs.renderer.startRendering()
 framework.init(); -- Atlantis V6 Team
+
+
+return true
